@@ -1,0 +1,6 @@
+{
+  "name": "Круг Дня",
+  "description": "Приложение для планирования и отслеживания распорядка дня на 24-часовом круге с синхронизацией календаря и импортом/экспортом Markdown.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
