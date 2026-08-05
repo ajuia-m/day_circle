@@ -25,6 +25,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name="com.example.widget.DayCircleWidgetProvider"
+            android:exported="true"
+            android:label="Круг Дня">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.example.widget.ACTION_PREV_DAY" />
+                <action android:name="com.example.widget.ACTION_NEXT_DAY" />
+                <action android:name="com.example.widget.ACTION_RESET_TODAY" />
+                <action android:name="com.example.widget.ACTION_UPDATE_ALL_WIDGETS" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/day_circle_widget_info" />
+        </receiver>
     </application>
 
 </manifest>

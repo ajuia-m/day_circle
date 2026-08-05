@@ -21,6 +21,7 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import com.example.widget.DayCircleWidgetProvider
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -191,6 +192,7 @@ class DayWheelViewModel(application: Application) : AndroidViewModel(application
                 syncOption = syncOption.value
             )
             _toastMessage.value = "Сохранено"
+            DayCircleWidgetProvider.updateAllWidgets(getApplication())
         }
     }
 
@@ -202,6 +204,7 @@ class DayWheelViewModel(application: Application) : AndroidViewModel(application
                 calendarId = selectedCalendarId.value,
                 syncOption = syncOption.value
             )
+            DayCircleWidgetProvider.updateAllWidgets(getApplication())
         }
     }
 
@@ -212,6 +215,7 @@ class DayWheelViewModel(application: Application) : AndroidViewModel(application
                 selectedInterval.value = null
             }
             _toastMessage.value = "Удалено"
+            DayCircleWidgetProvider.updateAllWidgets(getApplication())
         }
     }
 
@@ -261,6 +265,7 @@ class DayWheelViewModel(application: Application) : AndroidViewModel(application
                 syncOption = syncOption.value
             )
             _toastMessage.value = "Импортировано записей: ${parsed.size}"
+            DayCircleWidgetProvider.updateAllWidgets(getApplication())
         }
     }
 }
